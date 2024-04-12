@@ -28,19 +28,21 @@ export function Quotes() {
   );
 }
 
-function CarQuotes({ quotes }: { quotes: CarQuoteType[] }) {
+function CarQuotes({ quotes }: Readonly<{ quotes: CarQuoteType[] }>) {
   return (
     <>
-      {quotes.length === 0 ? (
+      {quotes.length !== 0 ? (
         <div>
           <Card>
             <H1>Car Quotes</H1>
           </Card>
           {quotes.map((quote) => {
             return (
-              <Card>
-                <CarDisplay quote={quote} />
-              </Card>
+              <div key={`car_${quote.id}`}>
+                <Card>
+                  <CarDisplay quote={quote} />
+                </Card>
+              </div>
             );
           })}
         </div>
@@ -56,19 +58,21 @@ function CarQuotes({ quotes }: { quotes: CarQuoteType[] }) {
   );
 }
 
-function HomeQuotes({ quotes }: { quotes: HomeQuoteType[] }) {
+function HomeQuotes({ quotes }: Readonly<{ quotes: HomeQuoteType[] }>) {
   return (
     <>
-      {quotes.length === 0 ? (
+      {quotes.length !== 0 ? (
         <div>
           <Card>
             <H1>Home Quotes</H1>
           </Card>
           {quotes.map((quote) => {
             return (
-              <Card>
-                <HomeDisplay quote={quote} />
-              </Card>
+              <div key={`home_${quote.id}`}>
+                <Card>
+                  <HomeDisplay quote={quote} />
+                </Card>
+              </div>
             );
           })}
         </div>

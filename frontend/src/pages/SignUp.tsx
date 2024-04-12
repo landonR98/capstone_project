@@ -44,6 +44,7 @@ async function signUp(
 
   if (response.success === true) {
     console.log(inputs);
+    navigator("/login")
   } else {
     errorSetter(response.errors);
   }
