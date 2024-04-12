@@ -1,0 +1,13 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "",
+    "build": "npm run build --prefix frontend && mv frontend/dist/* backend/public",
+    "start": "npm run start --prefix backend"
+  },
+  "author": "Landon Ryan",
+  "license": "ISC"
+}
